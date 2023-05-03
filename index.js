@@ -5,13 +5,13 @@ const program = new Command();
 async function invokeAction({ action, id, name, email, phone }) {
     switch (action) {
         case "list":
-            const AllContacts = await contacts.listContacts();
-            return console.log(AllContacts);
+            const allContacts = await contacts.listContacts();
+            return console.log(allContacts);
         case "get":
             const oneContact = await contacts.getContactById(id);
             return console.log(oneContact);
         case "add":
-            const newContact = await contacts.addContact({ name, email, phone });
+            const newContact = await contacts.addContact(name, email, phone);
             console.log(newContact);
             break;
 
